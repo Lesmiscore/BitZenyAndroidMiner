@@ -24,7 +24,7 @@ void vprintf_app(const char *format, va_list arg) {
     }
 
     jstring smsg = env->NewStringUTF(msg);
-    jmethodID mid = env->GetStaticMethodID(g_class, "updateUI", "(Ljava/lang/String;)V");
+    jmethodID mid = env->GetStaticMethodID(g_class, "notified", "(Ljava/lang/String;)V");
     env->CallStaticVoidMethod(g_class, mid, smsg);
 
     if (is_detach_requred) {
