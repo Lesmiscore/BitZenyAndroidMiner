@@ -3,7 +3,7 @@ package com.example.ottylab.bitzenyminer;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MainActivity {
+public class Miner {
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");

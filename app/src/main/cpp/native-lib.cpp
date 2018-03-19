@@ -43,7 +43,7 @@ JNI_OnLoad(JavaVM *vm, void *reserved) {
         return -1;
     }
 
-    jclass clazz = env->FindClass("com/example/ottylab/bitzenyminer/MainActivity");
+    jclass clazz = env->FindClass("com/example/ottylab/bitzenyminer/Miner");
     g_class = (jclass) env->NewGlobalRef(clazz);
 
     init(vprintf_app);
@@ -54,7 +54,7 @@ JNI_OnLoad(JavaVM *vm, void *reserved) {
 extern "C"
 JNIEXPORT jint
 JNICALL
-Java_com_example_ottylab_bitzenyminer_MainActivity_initMining(
+Java_com_example_ottylab_bitzenyminer_Miner_initMining(
         JNIEnv *env,
         jobject /* this */) {
     Log("initMining");
@@ -64,7 +64,7 @@ Java_com_example_ottylab_bitzenyminer_MainActivity_initMining(
 extern "C"
 JNIEXPORT jboolean
 JNICALL
-Java_com_example_ottylab_bitzenyminer_MainActivity_isMiningRunning(
+Java_com_example_ottylab_bitzenyminer_Miner_isMiningRunning(
         JNIEnv *env,
         jobject /* this */) {
     Log("isMiningRunning");
@@ -74,7 +74,7 @@ Java_com_example_ottylab_bitzenyminer_MainActivity_isMiningRunning(
 extern "C"
 JNIEXPORT jint
 JNICALL
-Java_com_example_ottylab_bitzenyminer_MainActivity_startMining(
+Java_com_example_ottylab_bitzenyminer_Miner_startMining(
         JNIEnv *env,
         jobject /* this */,
         jstring url,
@@ -98,7 +98,7 @@ Java_com_example_ottylab_bitzenyminer_MainActivity_startMining(
 extern "C"
 JNIEXPORT jint
 JNICALL
-Java_com_example_ottylab_bitzenyminer_MainActivity_startBenchmark(
+Java_com_example_ottylab_bitzenyminer_Miner_startBenchmark(
         JNIEnv *env,
         jobject /* this */,
         jint n_threads) {
@@ -110,7 +110,7 @@ Java_com_example_ottylab_bitzenyminer_MainActivity_startBenchmark(
 extern "C"
 JNIEXPORT jint
 JNICALL
-Java_com_example_ottylab_bitzenyminer_MainActivity_stopMining(
+Java_com_example_ottylab_bitzenyminer_Miner_stopMining(
         JNIEnv *env,
         jobject /* this */) {
     Log("stopMining");
